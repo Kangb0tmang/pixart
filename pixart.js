@@ -22,6 +22,7 @@ var $set_color = $('#set-color');
 // });
 
 // Append 1000 divs (a bit excessive, but ok...)
+// Change square to green on click
 $(document).ready(function()
 {
   for (var i = 0; i <= 1000; i++)
@@ -30,4 +31,10 @@ $(document).ready(function()
     $(div).addClass('square');
     $('body').append(div);
   }
+
+  $('.square').on('click', function(e)
+  {
+    e.preventDefault();
+    $(event.target).css("background", "green");
+  });
 });
