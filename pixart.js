@@ -1,4 +1,3 @@
-console.log('PIxart');
 // Set Color
 var $brush = $('.brush');
 var $color_field = $('#color-field');
@@ -43,4 +42,33 @@ $(document).ready(function()
     // Change square to color field on click
     $(event.target).css("background", $color_field.val());
   });
+});
+
+// Stamp Tool
+var $movie = $('#movie');
+var $search_movie = $('#search-movie');
+var $stamp = $('.stamp');
+
+$search_movie.on('click', function(e)
+{
+  e.preventDefault();
+  var options =
+  {
+    url: 'omdbapi.com/',
+    dataType: "json",
+    contentType: 'application/json',
+    data:
+    {
+      s: $movie.val(),
+      apikey: '2f6435d9'
+    }
+  };
+
+  var getMovie = function(response)
+  {
+    console.log(response);
+    console.log(response.error);
+  };
+
+  $.ajax(options).done(getMovie);
 });
