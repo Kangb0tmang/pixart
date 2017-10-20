@@ -32,9 +32,13 @@ $(document).ready(function()
     $('body').append(div);
   }
 
-  $('.square').on('click', function(e)
+  var $square = $('.square');
+
+  $square.on('click', function(e)
   {
     e.preventDefault();
-    $(event.target).css("background", "green");
+    // $(event.target).css("background", "green");
+    // Change square to color field on click
+    $(event.target).css("background", $color_field.val());
   });
 });
