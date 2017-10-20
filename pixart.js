@@ -34,7 +34,9 @@ $(document).ready(function()
 
   var $square = $('.square');
 
-  $square.on('click', function(e)
+  // $square.on('click', function(e)
+  // Change event to mouseover
+  $square.mouseover(function(e)
   {
     e.preventDefault();
     // $(event.target).css("background", "green");
