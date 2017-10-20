@@ -11,12 +11,23 @@ var $set_color = $('#set-color');
 // });
 
 // Set Color on 'Enter key'
-$color_field.keypress(function(e)
+// $color_field.keypress(function(e)
+// {
+//   var key = e.which;
+//   if (key == 13)
+//   {
+//     $brush.css("background", $color_field.val()).click();
+//     return false;
+//   }
+// });
+
+// Append 1000 divs (a bit excessive, but ok...)
+$(document).ready(function()
 {
-  var key = e.which;
-  if (key == 13)
+  for (var i = 0; i <= 1000; i++)
   {
-    $brush.css("background", $color_field.val()).click();
-    return false;
+    var div = document.createElement('div');
+    $(div).addClass('square');
+    $('body').append(div);
   }
 });
